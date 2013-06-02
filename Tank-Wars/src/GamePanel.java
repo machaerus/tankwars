@@ -60,32 +60,32 @@ public class GamePanel extends JPanel implements Runnable {
 		shellImage = new BufferedImage[9];
 		
 		try {
-			background = ImageIO.read(this.getClass().getResource("/gfx/tank-wars-bg.jpg"));
-			tankImage[0] = ImageIO.read(this.getClass().getResource("/gfx/soviet.png"));
-			tankImage[1] = ImageIO.read(this.getClass().getResource("/gfx/german.png"));
-			tankImage[2] = ImageIO.read(this.getClass().getResource("/gfx/british.png"));
-			tankImage[3] = ImageIO.read(this.getClass().getResource("/gfx/polish.png"));
-			shellImage[0] = ImageIO.read(this.getClass().getResource("/gfx/odlamkowy.png"));
-			shellImage[1] = ImageIO.read(this.getClass().getResource("/gfx/odlamkowy-empty.png"));
-			shellImage[2] = ImageIO.read(this.getClass().getResource("/gfx/odlamkowy-active.png"));
-			shellImage[3] = ImageIO.read(this.getClass().getResource("/gfx/burzacy.png"));
-			shellImage[4] = ImageIO.read(this.getClass().getResource("/gfx/burzacy-empty.png"));
-			shellImage[5] = ImageIO.read(this.getClass().getResource("/gfx/burzacy-active.png"));
-			shellImage[6] = ImageIO.read(this.getClass().getResource("/gfx/flara.png"));
-			shellImage[7] = ImageIO.read(this.getClass().getResource("/gfx/flara-empty.png"));
-			shellImage[8] = ImageIO.read(this.getClass().getResource("/gfx/flara-active.png"));
+			background = ImageIO.read(this.getClass().getResource("gfx/tank-wars-bg.jpg"));
+			tankImage[0] = ImageIO.read(this.getClass().getResource("gfx/soviet.png"));
+			tankImage[1] = ImageIO.read(this.getClass().getResource("gfx/german.png"));
+			tankImage[2] = ImageIO.read(this.getClass().getResource("gfx/british.png"));
+			tankImage[3] = ImageIO.read(this.getClass().getResource("gfx/polish.png"));
+			shellImage[0] = ImageIO.read(this.getClass().getResource("gfx/odlamkowy.png"));
+			shellImage[1] = ImageIO.read(this.getClass().getResource("gfx/odlamkowy-empty.png"));
+			shellImage[2] = ImageIO.read(this.getClass().getResource("gfx/odlamkowy-active.png"));
+			shellImage[3] = ImageIO.read(this.getClass().getResource("gfx/burzacy.png"));
+			shellImage[4] = ImageIO.read(this.getClass().getResource("gfx/burzacy-empty.png"));
+			shellImage[5] = ImageIO.read(this.getClass().getResource("gfx/burzacy-active.png"));
+			shellImage[6] = ImageIO.read(this.getClass().getResource("gfx/flara.png"));
+			shellImage[7] = ImageIO.read(this.getClass().getResource("gfx/flara-empty.png"));
+			shellImage[8] = ImageIO.read(this.getClass().getResource("gfx/flara-active.png"));
 		} catch(IOException e) {
 			System.out.println("Blad podczas wczytywania grafiki.");
 		}
 		
 		// wczytywanie dźwięków
 		
-		fireSound = Applet.newAudioClip(this.getClass().getResource("/sounds/Centipede_Death.wav"));
-		bellSound = Applet.newAudioClip(this.getClass().getResource("/sounds/Power On 001.wav"));
-		vUp = Applet.newAudioClip(this.getClass().getResource("/sounds/Galaga_Tink03_looped.wav"));
-		vDown = Applet.newAudioClip(this.getClass().getResource("/sounds/Galaga_Tink03_looped.wav"));
-		aUp = Applet.newAudioClip(this.getClass().getResource("/sounds/Galaga_Tink03_looped.wav"));
-		aDown = Applet.newAudioClip(this.getClass().getResource("/sounds/Galaga_Tink03_looped.wav"));
+		fireSound = Applet.newAudioClip(this.getClass().getResource("sound/Centipede_Death.wav"));
+		bellSound = Applet.newAudioClip(this.getClass().getResource("sound/Power_On_001.wav"));
+		vUp = Applet.newAudioClip(this.getClass().getResource("sound/Galaga_Tink03_looped.wav"));
+		vDown = Applet.newAudioClip(this.getClass().getResource("sound/Galaga_Tink03_looped.wav"));
+		aUp = Applet.newAudioClip(this.getClass().getResource("sound/Galaga_Tink03_looped.wav"));
+		aDown = Applet.newAudioClip(this.getClass().getResource("sound/Galaga_Tink03_looped.wav"));
 		
 		// przygotowywanie planszy
 		
@@ -427,7 +427,7 @@ public class GamePanel extends JPanel implements Runnable {
 	    	e.draw(dbg);
 	    }
 	    
-	    Font font = new Font("Monospaced",Font.PLAIN,13);
+	    Font font = new Font("Terminus",Font.PLAIN,12);
 	    
 	    Tank t;
 	    if(currTank != null) t = currTank;

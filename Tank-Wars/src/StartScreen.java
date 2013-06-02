@@ -33,7 +33,7 @@ public class StartScreen extends JPanel implements Runnable {
 	
 	// czcionki
 	
-	//private Font fairfax;
+	private Font terminus;
 	
 	private boolean isSoundOn = false;
 	
@@ -46,19 +46,19 @@ public class StartScreen extends JPanel implements Runnable {
 		
 		// ładujemy czcionki
 		
-//		InputStream fin = this.getClass().getResourceAsStream("/fonts/fairfax/Fairfax.ttf");
-//		  try {
-//			this.fairfax = Font.createFont ( 
-//			    Font.PLAIN,
-//			    fin
-//			  ).deriveFont(12l);
-//		} catch (FontFormatException e) {
-//			// 
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			// 
-//			e.printStackTrace();
-//		}
+		InputStream fin = this.getClass().getResourceAsStream("/fonts/Terminus.ttf");
+		  try {
+			this.terminus = Font.createFont ( 
+			    Font.PLAIN,
+			    fin
+			  ).deriveFont(16l);
+		} catch (FontFormatException e) {
+			// 
+			e.printStackTrace();
+		} catch (IOException e) {
+			// 
+			e.printStackTrace();
+		}
 		
 		
 		setFocusable(true);
@@ -144,7 +144,7 @@ public class StartScreen extends JPanel implements Runnable {
 		dbg.fillRect(0, 0, PWIDTH, PHEIGHT);
 	    
 	    Font font = new Font("Monospaced",Font.PLAIN,13);
-		dbg.setFont(font);
+		dbg.setFont(terminus);
 		dbg.setColor(Color.white);
 		dbg.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
 
