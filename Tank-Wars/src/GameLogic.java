@@ -42,7 +42,7 @@ public class GameLogic implements Runnable {
 		}
 		
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e2) {
 			e2.printStackTrace();
 		}

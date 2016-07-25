@@ -143,6 +143,8 @@ public class GameWindow extends JFrame {
 			e.printStackTrace();
 		}
 
+		System.out.println("Tworzę GameLogic...");
+		
 		GameLogic GLogic = new GameLogic(Players, gp, semaphore);
 		gp.setLogic(GLogic);
 

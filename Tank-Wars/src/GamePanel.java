@@ -59,6 +59,8 @@ public class GamePanel extends JPanel implements Runnable {
 		tankImage = new BufferedImage[4];
 		shellImage = new BufferedImage[9];
 		
+		System.out.println("Wczytuję grafikę...");
+		
 		try {
 			background = ImageIO.read(this.getClass().getResource("gfx/tank-wars-bg.jpg"));
 			tankImage[0] = ImageIO.read(this.getClass().getResource("gfx/soviet.png"));
@@ -80,19 +82,31 @@ public class GamePanel extends JPanel implements Runnable {
 		
 		// wczytywanie dźwięków
 		
-		fireSound = Applet.newAudioClip(this.getClass().getResource("sound/Centipede_Death.wav"));
-		bellSound = Applet.newAudioClip(this.getClass().getResource("sound/Power_On_001.wav"));
-		vUp = Applet.newAudioClip(this.getClass().getResource("sound/Galaga_Tink03_looped.wav"));
-		vDown = Applet.newAudioClip(this.getClass().getResource("sound/Galaga_Tink03_looped.wav"));
-		aUp = Applet.newAudioClip(this.getClass().getResource("sound/Galaga_Tink03_looped.wav"));
-		aDown = Applet.newAudioClip(this.getClass().getResource("sound/Galaga_Tink03_looped.wav"));
+		System.out.println("Wczytuję dzwięki...");
+		
+		try {
+			fireSound = Applet.newAudioClip(this.getClass().getResource("sound/Centipede_Death.wav"));
+			bellSound = Applet.newAudioClip(this.getClass().getResource("sound/Power_On_001.wav"));
+			vUp = Applet.newAudioClip(this.getClass().getResource("sound/Galaga_Tink03_looped.wav"));
+			vDown = Applet.newAudioClip(this.getClass().getResource("sound/Galaga_Tink03_looped.wav"));
+			aUp = Applet.newAudioClip(this.getClass().getResource("sound/Galaga_Tink03_looped.wav"));
+			aDown = Applet.newAudioClip(this.getClass().getResource("sound/Galaga_Tink03_looped.wav"));
+		} catch(Exception e) {
+			System.out.println("Blad podczas wczytywania grafiki.");
+		}
 		
 		// przygotowywanie planszy
 		
+		System.out.println("Przygotowuję planszę...");
+		
+		System.out.println("Tworzę macierz czołgów...");
 		Tanks = new ArrayList<Tank>();
+		System.out.println("Tworzę macierz komunikatów...");
 		screenMessages = new LinkedList<Message>(); 
+		System.out.println("Tworzę macierz eksplozji...");
 		Explosions = new LinkedList<Explosion>();
 		try {
+			System.out.println("Inicjalizuję mapę...");
 			map = new Map(this);
 		} catch (FileNotFoundException e) {
 			System.out.println("Nie udalo sie zainicjalizowac mapy");
@@ -105,6 +119,7 @@ public class GamePanel extends JPanel implements Runnable {
 
 		// włącz obsługę klawiatury i myszki
 		
+		System.out.println("Przygotowuję kontrolę...");
 		setControls();
 	}
 		
@@ -427,7 +442,7 @@ public class GamePanel extends JPanel implements Runnable {
 	    	e.draw(dbg);
 	    }
 	    
-	    Font font = new Font("Terminus",Font.PLAIN,12);
+	    Font font = new Font("Monospace",Font.PLAIN,12);
 	    
 	    Tank t;
 	    if(currTank != null) t = currTank;
